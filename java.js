@@ -35,21 +35,45 @@ function ImageInterval () {
     } else {
         $(".main-img").attr("src", "img/" + imgIndex.toString() + ".jpg");
     }
+    setTimeout(function() {
+        $("body").css("background-image", "url(\"img/" + imgIndex.toString() + ".jpg\")");
+    }, 250);
+    
 }
-var optionsMenuOpened = false;
+
+
+var menuIndex = 0;
 //Detectar click de pantalla
 $(document).on("click", function () {
     
-    optionsMenuOpened = !optionsMenuOpened;
+    menuIndex += 1;
+    if (menuIndex == 4)
+        menuIndex = 0;
+    
+    if (menuIndex == 0) {
+        $(".dev-info-menu").css("opacity","0");
+        $(".main-clock-menu").css("opacity","0");
+        $(".options-menu").css("opacity", "0");
+    }
+    else if (menuIndex == 1) {
+        $(".options-menu").css("opacity", "1");
+    } else if (menuIndex == 2) {
+        $(".options-menu").css("opacity", "0");
+        $(".main-clock-menu").css("opacity","1");
+    }
+    else if (menuIndex == 3) {
+        $(".main-clock-menu").css("opacity","0");
+        $(".dev-info-menu").css("opacity","1");
+    }
     
     if (optionsMenuOpened) {
         //Abrir menú de opciones
-        $(".blur-mask").css("filter", "blur(50px)");
-        $(".options-menu").css("visibility", "visible");
+        
+        
     } else {
         //Cerrar menú de opciones
-        $(".blur-mask").css("filter", "blur(0px)");
-        $(".options-menu").css("visibility", "hidden");
+        
+        
     }
 });
 
