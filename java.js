@@ -9,6 +9,8 @@ $ (document).ready(function() {
     var imgInterval = setInterval(ImageInterval, 5000);
 });
 
+var imgIndex = 0;
+
 function Update () {
     //Establecer hora del reloj
     var date = new Date();
@@ -20,9 +22,26 @@ function Update () {
     var time = hh + ":" + mm;
     $(".clock").html(time);
     $(".secs").html(ss);
+    
+    
+    //Establecer hora del reloj principal
+    
+        var dia = date.getUTCDay();
+        var diaEsp;
+        if (dia == 1) diaEsp == "LU";
+        else if (dia == 2) diaEsp == "MA";
+        else if (dia == 3) diaEsp == "MI";
+        else if (dia == 4) diaEsp == "JUE";
+        else if (dia == 5) diaEsp == "VIE";
+        else if (dia == 6) diaEsp == "SA";
+        else if (dia == 7) diaEsp == "DOM";
+        
+        console.log(dia);console.log(diaEsp);
+        $("#dias").html(diaEsp);
+        $("#horas").html(hh);
+        $("#minutos").html(mm);
+        $("#segundos").html(ss);
 }
-
-var imgIndex = 0;
 
 function ImageInterval () {
     imgIndex += 1;
@@ -64,16 +83,6 @@ $(document).on("click", function () {
     else if (menuIndex == 3) {
         $(".main-clock-menu").css("opacity","0");
         $(".dev-info-menu").css("opacity","1");
-    }
-    
-    if (optionsMenuOpened) {
-        //Abrir menú de opciones
-        
-        
-    } else {
-        //Cerrar menú de opciones
-        
-        
     }
 });
 

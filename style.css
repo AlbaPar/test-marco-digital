@@ -1,6 +1,7 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500&display=swap');
 
 
 
@@ -114,18 +115,6 @@ body {
     transform: scale(1.1,1.1);
 }
 
-.main-clock-menu {
-	position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #212121;
-    top: 0px; bottom: 0px;
-    left: 0px; right: 0px;
-    visibility: visible;
-    opacity: 0;
-    transition: .3s opacity ease-in-out;
-}
-
 
 .dev-info-menu {
 	position: absolute;
@@ -158,6 +147,64 @@ body {
     position: absolute;
     top: 60px;
     left: 0; right: 0;
+}
+
+
+
+/*RELOJ PRINCIPAL*/
+.main-clock-menu {
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #212121;
+    top: 0px; bottom: 0px;
+    left: 0px; right: 0px;
+    visibility: visible;
+    opacity: 0;
+    transition: .3s opacity ease-in-out;
+}
+.main-clock-menu .p {
+    position: absolute;
+    width: 605px;
+    height: 120px;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+    margin: auto;
+}
+
+.main-clock-menu .dp {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    color: rgba(255, 255, 255, 0.57);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    padding-left: 10px;
+}
+
+.mc-box {
+    margin-left: 10px;
+    display: inline-block;
+	width: 120px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.57);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 12px;
+    padding-top: 90px;
+}
+
+.mc-box h3 {
+	margin: auto;
+    margin-top: -80px;
+    
+    font-size: 50px;
+    font-weight: 400;
+    color: white;
 }
 
 
