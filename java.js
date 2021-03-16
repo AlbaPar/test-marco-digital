@@ -4,6 +4,9 @@ $ (document).ready(function() {
     
     //Hacer que funcione Update()
     var update = setInterval(Update, 10);
+    
+    //Cambiar imagen
+    var imgInterval = setInterval(ImageInterval, 5000);
 });
 
 function Update () {
@@ -18,3 +21,40 @@ function Update () {
     $(".clock").html(time);
     $(".secs").html(ss);
 }
+
+var imgIndex = 0;
+
+function ImageInterval () {
+    imgIndex += 1;
+    if (imgIndex == 4)
+        imgIndex = 0;
+    $(".main-img").toggleClass("transparent");
+    $(".second-img").toggleClass("transparent");
+    if ($(".main-img").hasClass("transparent")) {
+       $(".second-img").attr("src", "img/" + imgIndex.toString() + ".jpg"); 
+    } else {
+        $(".main-img").attr("src", "img/" + imgIndex.toString() + ".jpg");
+    }
+}
+var optionsMenuOpened = false;
+//Detectar click de pantalla
+$(document).on("click", function () {
+    
+    optionsMenuOpened = !optionsMenuOpened;
+    
+    if (optionsMenuOpened) {
+        //Abrir menú de opciones
+        $(".blur-mask").css("filter", "blur(50px)");
+        $(".options-menu").css("visibility", "visible");
+    } else {
+        //Cerrar menú de opciones
+        $(".blur-mask").css("filter", "blur(0px)");
+        $(".options-menu").css("visibility", "hidden");
+    }
+});
+
+
+
+
+
+

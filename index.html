@@ -10,46 +10,39 @@
     <meta name="keywords" content="">
     <link rel="stylesheet" href="style.css">
 
-    <link rel = "stylesheet" type = "text/css" href = "#" />
-    <!--Add your .css file-->
-
-
-
-    <style type="text/css">
-
-    </style>
-    <!--  Internal css link -->
-
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
     <script type = "text/javascript" src = "java.js"></script>
 
     <!--Add Your External jQuery Plugin-->
 
-
-
-    <script type = "text/javascript" lang="javascript">
-
-
-    </script>
-    <!--  Internal jquery/javascript link-->
-
 </head>
 
 
 <body>
-    <img src="img/0.jpg" class="main-img">
-    <h1 class="clock">00:00<h2 class="secs">00</h2></h1>
+    <div class="blur-mask">
+       <div class="img-wrapper">
+            <img src="img/0.jpg" class="main-img">
+        </div>
+        <img src="img/0.jpg" class="second-img transparent">
+        <h1 class="clock">00:00<h2 class="secs">00</h2></h1>
+    </div>
+    
+    <div class="options-menu">
+       
+       <a class="weatherwidget-io" href="https://forecast7.com/es/36d76n2d62/roquetas-de-mar/" data-label_1="" data-font="Noto Sans" data-icons="Climacons Animated" data-days="3" data-theme="pure" data-basecolor="rgba(255, 255, 255, 0)" data-shadow="rgba(0, 0, 0, 0.27)" data-accent="rgba(255, 0, 0, 0)" data-textcolor="#ffffff" data-highcolor="#F44336" data-lowcolor="#2196F3" data-suncolor="#FFC107" data-mooncolor="#BDBDBD" data-cloudcolor="#BDBDBD" data-raincolor="#1976D2" >ROQUETAS DE MAR</a>
+
+       
+    </div>
 
 
 
 
 
 
-
-<script type="text/javascript">
-
-
+<!--Widget de tiempo-javascript-->
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
 </script>
 
 
