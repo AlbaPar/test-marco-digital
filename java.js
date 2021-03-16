@@ -70,6 +70,7 @@ $(document).on("click", function () {
         menuIndex = 0;
     
     if (menuIndex == 0) {
+        $(".photos-panel").css("visibility", "visible");
         $(".dev-info-menu").css("opacity","0");
         $(".main-clock-menu").css("opacity","0");
         $(".options-menu").css("opacity", "0");
@@ -77,6 +78,7 @@ $(document).on("click", function () {
     else if (menuIndex == 1) {
         $(".options-menu").css("opacity", "1");
     } else if (menuIndex == 2) {
+        $(".photos-panel").css("visibility", "hidden");
         $(".options-menu").css("opacity", "0");
         $(".main-clock-menu").css("opacity","1");
     }
