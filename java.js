@@ -26,26 +26,26 @@ function Update () {
     
     //Establecer hora del reloj principal
     
-        var dia = date.getUTCDay();
-        var diaEsp;
-        if (dia == 1) diaEsp == "LU";
-        else if (dia == 2) diaEsp == "MA";
-        else if (dia == 3) diaEsp == "MI";
-        else if (dia == 4) diaEsp == "JUE";
-        else if (dia == 5) diaEsp == "VIE";
-        else if (dia == 6) diaEsp == "SA";
-        else if (dia == 7) diaEsp == "DOM";
+    var dia = date.getUTCDay();
+    var diaEsp = "";
+    if (dia == 1) diaEsp = "LUN";
+    else if (dia == 2) diaEsp = "MAR";
+    else if (dia == 3) diaEsp = "MIE";
+    else if (dia == 4) diaEsp = "JUE";
+    else if (dia == 5) diaEsp = "VIE";
+    else if (dia == 6) diaEsp = "SÁB";
+    else if (dia == 7) diaEsp = "DOM";
         
-        console.log(dia);console.log(diaEsp);
-        $("#dias").html(diaEsp);
-        $("#horas").html(hh);
-        $("#minutos").html(mm);
-        $("#segundos").html(ss);
+    console.log(dia);console.log(diaEsp);
+    $("#dia").html(diaEsp);
+    $("#horas").html(hh);
+    $("#minutos").html(mm);
+    $("#segundos").html(ss);
 }
 
 function ImageInterval () {
     imgIndex += 1;
-    if (imgIndex == 4)
+    if (imgIndex == 11)
         imgIndex = 0;
     $(".main-img").toggleClass("transparent");
     $(".second-img").toggleClass("transparent");
