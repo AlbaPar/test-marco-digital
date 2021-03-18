@@ -12,7 +12,6 @@ html, body {
     margin: 0;
     
     user-select: none;
-    pointer-events: none;
     overflow-y: hidden;
     overflow-x: hidden;
 }
@@ -24,18 +23,18 @@ body {
 }
 
 .main-img {
-    max-width: 125%;
-    max-height: 125%;
+    max-width: 100%;
+    max-height: 100%;
     width: auto;
     height: auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     opacity: 1;
     transition: opacity .5s ease-in-out;
     
     left: 50%; 
-    transform: translate(-50%,0); 
+    transform: translate(-50%,50%);
+    bottom: 50%; 
     position: absolute; 
     z-index: 0;
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.3);
@@ -43,14 +42,12 @@ body {
 
 .second-img {
     position: static;
-    max-width: 125%;
-    max-height: 125%;
+    max-width: 100%;
+    max-height: 100%;
     width: auto;
     height: auto;
     display: block;
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     opacity: 1;
     transition: opacity .5s ease-in-out;
     z-index: -1;
@@ -91,6 +88,41 @@ body {
     font-size: 30px;
     font-weight: 300;
     text-shadow: 0px 0px 20px black;
+}
+.functions-panel {
+    position: absolute;
+    left: 0; right: 0;
+    bottom: 20px;
+    margin: auto;
+	width: 280px;
+    height: 50px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: table;
+    background-color: #ffffff;
+    border-radius: 25px;
+    z-index: 10;
+    box-shadow: 0px 10px 30px  2px rgba(0, 0, 0, 0.42);
+    transform: translate(0,100px);
+    transition: transform .3s ease;
+}
+
+.fbtn {
+	display: table-cell;
+    height: 100%;
+    width: 50px;
+    padding-top: 12px;
+    font-size: 25px;
+    color: #212121;
+    text-align: center;
+    transform: scale(1,1);
+    transition: transform 1s ease-out;
+        
+}
+
+.fbtn:active {
+	transform: scale(.8,.8);
+    transition-duration: .1s;
 }
 
 .photos-panel {
@@ -172,22 +204,24 @@ body {
 }
 .main-clock-menu .p {
     position: absolute;
-    width: 605px;
-    height: 120px;
+    width: 0px;
+    height: 100%;
     left: 0; right: 0;
     top: 0; bottom: 0;
     margin: auto;
+    padding-right: 120px;
+    padding-top: 10px;
 }
 
 .main-clock-menu .dp {
     display: inline-block;
     width: 10px;
     height: 10px;
-    color: rgba(255, 255, 255, 0.57);
+    color: rgba(255, 255, 255, 0);
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     font-size: 30px;
-    padding-left: 10px;
+    padding-left: 67px;
 }
 
 .mc-box {
@@ -215,6 +249,19 @@ body {
 }
 
 
+/******MENÚ DE POST-ITS*****/
+
+.sticky-notes-menu {
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #212121;
+    top: 0px; bottom: 0px;
+    left: 0px; right: 0px;
+    visibility: visible;
+    opacity: 0;
+    transition: .3s opacity ease-in-out;
+}
 
 
 
