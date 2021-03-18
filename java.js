@@ -1,5 +1,14 @@
 $ (document).ready(function() {
     
+    //Detectar click de pantalla
+$("#touchable-zone").on("click", function () {
+    fpanelIsOpen = !fpanelIsOpen;
+    if (fpanelIsOpen)
+        $(".functions-panel").css("transform", "translate(0,0)");
+    else
+        $(".functions-panel").css("transform", "translate(0,100px)");
+});
+    
     
     //Botones del menú
     $("#fbtn0").on("click", function() {
@@ -79,20 +88,13 @@ function ImageInterval () {
 
 var menuIndex = 0;
 var fpanelIsOpen = false;
-//Detectar click de pantalla
-$(document).click( function () {
-    fpanelIsOpen = !fpanelIsOpen;
-    if (fpanelIsOpen)
-        $(".functions-panel").css("transform", "translate(0,0)");
-    else
-        $(".functions-panel").css("transform", "translate(0,100px)");
-});
+
 
 function ChangeMenu (i) {
     menuIndex = i;
     if (menuIndex == 0) {
         $(".photos-panel").css("visibility", "visible");
-        $(".dev-info-menu").css("opacity","0");
+        $(".chrono-menu").css("opacity","0");
         $(".main-clock-menu").css("opacity","0");
         $(".options-menu").css("opacity", "0");
         $(".sticky-notes-menu").css("opacity","0");
@@ -100,33 +102,33 @@ function ChangeMenu (i) {
     else if (menuIndex == 1) {
         $(".photos-panel").css("visibility", "hidden");
         $(".options-menu").css("opacity", "1");
-        $(".dev-info-menu").css("opacity","0");
+        $(".chrono-menu").css("opacity","0");
         $(".main-clock-menu").css("opacity","0");
         $(".sticky-notes-menu").css("opacity","0");
     } else if (menuIndex == 2) {
         $(".photos-panel").css("visibility", "hidden");
         $(".options-menu").css("opacity", "0");
-        $(".dev-info-menu").css("opacity","0");
+        $(".chrono-menu").css("opacity","0");
         $(".main-clock-menu").css("opacity","1");
         $(".sticky-notes-menu").css("opacity","0");
     }
     else if (menuIndex == 3) {
         $(".photos-panel").css("visibility", "hidden");
         $(".options-menu").css("opacity", "0");
-        $(".dev-info-menu").css("opacity","1");
+        $(".chrono-menu").css("opacity","1");
         $(".main-clock-menu").css("opacity","0");
         $(".sticky-notes-menu").css("opacity","0");
     }
     else if (menuIndex == 4) {
         $(".photos-panel").css("visibility", "hidden");
         $(".options-menu").css("opacity", "0");
-        $(".dev-info-menu").css("opacity","1");
+        $(".chrono-menu").css("opacity","0");
         $(".main-clock-menu").css("opacity","0");
         $(".sticky-notes-menu").css("opacity","1");
     }
     
     
-    for (var j = 0; j < 4; j++) {
+    for (var j = 0; j < 5; j++) {
         if (j == i) {
             $("#fbtn"+j.toString()).css("color", "#303F9F");
         }
@@ -134,8 +136,11 @@ function ChangeMenu (i) {
             $("#fbtn"+j.toString()).css("color", "#212121");
         }
     }
+    setTimeout(function() {
+        $(".functions-panel").css("transform", "translate(0,100px)");
+        fpanelIsOpen = false;
+    }, 250);
 }
-
 
 
 
